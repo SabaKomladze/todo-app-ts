@@ -1,0 +1,69 @@
+.input-main {
+  background-image: url(./assets/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 44px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 24px 0;
+}
+.todo {
+  letter-spacing: 10px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+}
+.moon {
+  cursor: pointer;
+}
+.input-text {
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  height: 48px;
+  font-family: "Josefin Sans";
+  font-style: normal;
+}
+.input-div {
+  position: relative;
+  width: 87.2%;
+  height: 48px;
+  display: block;
+  margin: 40px auto 0;
+  max-width: 540px;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #e3e4f1;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 20px;
+}
+::placeholder {
+  padding-left: 52px;
+}
+.checkbox:checked {
+  background-image: url(./assets/Group3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 500px) {
+  .input-main {
+    background-image: url(./assets/bg-desktop-light.jpg);
+  }
+}
