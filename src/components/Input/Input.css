@@ -19,6 +19,7 @@
 .moon {
   cursor: pointer;
 }
+
 .input-text {
   border: none;
   background: #ffffff;
@@ -28,6 +29,7 @@
   height: 48px;
   font-family: "Josefin Sans";
   font-style: normal;
+  padding-left: 52px;
 }
 .input-div {
   position: relative;
@@ -37,30 +39,9 @@
   margin: 40px auto 0;
   max-width: 540px;
 }
-.checkbox {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
-  border: 1px solid #e3e4f1;
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 20px;
-}
+
 ::placeholder {
   padding-left: 52px;
-}
-.checkbox:checked {
-  background-image: url(./assets/Group3.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 @media (min-width: 500px) {
   .input-main {

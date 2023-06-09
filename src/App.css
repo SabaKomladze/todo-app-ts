@@ -1,0 +1,38 @@
+.checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #e3e4f1;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 20px;
+}
+
+.checkbox:checked {
+  background-image: url(./assets/Group3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.second {
+  position: static;
+  margin: 0;
+  transform: translate(0);
+}
+.list {
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  width: 87.2%;
+  max-width: 540px;
+  margin: 0 auto;
+  position: relative;
+  top: -30px;
+}
