@@ -6,7 +6,7 @@ import AddTodo from "./components/AddTodo/AddTodo";
 const App: FC = () => {
   const [input, setInput] = useState<string>("");
   const [todos, setTodos] = useState<ITask[]>([]);
-
+  const [checked, setChecked] = useState<boolean>(false);
   return (
     <div className="app">
       <div className="header-input">
@@ -15,6 +15,8 @@ const App: FC = () => {
           setInput={setInput}
           todos={todos}
           setTodos={setTodos}
+          checked={checked}
+          setChecked={setChecked}
         />
       </div>
       <div className="list">

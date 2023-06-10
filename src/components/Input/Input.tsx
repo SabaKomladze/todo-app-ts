@@ -6,6 +6,8 @@ function Input(props: {
   setInput: React.Dispatch<React.SetStateAction<string>>;
   todos: ITask[];
   setTodos: React.Dispatch<React.SetStateAction<ITask[]>>;
+  checked: boolean;
+  setChecked: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -14,11 +16,11 @@ function Input(props: {
   const addTask = (e: any) => {
     e.preventDefault();
 
-    const newTask = { taskName: props.input, checked };
+    const newTask = { taskName: props.input, checked: props.checked };
     props.setTodos([...props.todos, newTask]);
   };
   console.log(props.todos);
-  const [checked, setChecked] = useState(false);
+
   return (
     <div className="input-main">
       <header className="header">
@@ -43,7 +45,7 @@ function Input(props: {
             type="checkbox"
             className="checkbox"
             onClick={(e: any) => {
-              setChecked(e.target.checked);
+              props.setChecked(e.target.checked);
             }}
           />
         </label>
