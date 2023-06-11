@@ -13,13 +13,14 @@ function Input(props: {
     e.preventDefault();
     props.setInput(e.target.value);
   };
-  const addTask = (e: any) => {
+
+  const addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newTask = { taskName: props.input, checked: props.checked };
     props.setTodos([...props.todos, newTask]);
+    props.setInput("");
   };
-  console.log(props.todos);
 
   return (
     <div className="input-main">

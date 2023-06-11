@@ -20,8 +20,16 @@ const App: FC = () => {
         />
       </div>
       <div className="list">
-        {todos.map((task: ITask, key: number) => {
-          return <AddTodo key={key} task={task} />;
+        {todos.map((task: ITask, index: number) => {
+          return (
+            <AddTodo
+              key={index}
+              task={task}
+              todos={todos}
+              setTodos={setTodos}
+              index={index}
+            />
+          );
         })}
       </div>
     </div>
