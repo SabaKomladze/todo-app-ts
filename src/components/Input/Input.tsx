@@ -1,5 +1,5 @@
 import "./Input.css";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { ITask } from "../Interface";
 function Input(props: {
   input: string;
@@ -19,6 +19,7 @@ function Input(props: {
 
     const newTask = { taskName: props.input, checked: props.checked };
     props.setTodos([...props.todos, newTask]);
+
     props.setInput("");
   };
 
@@ -47,6 +48,7 @@ function Input(props: {
             className="checkbox"
             onClick={(e: any) => {
               props.setChecked(e.target.checked);
+              console.log(props.checked);
             }}
           />
         </label>

@@ -10,42 +10,47 @@ interface Props {
 }
 const AddTodo = ({ index, task, todos, setTodos }: Props) => {
   const [checked, setChecked] = useState<boolean>(task.checked);
+
   const deleteTodo = (index: number) => {
     let reduce = [...todos];
     reduce.splice(index, 1);
     setTodos(reduce);
   };
   return (
-    <div className="task-main">
-      <div className="check-text">
-        <label className="label">
-          <input
-            type="checkbox"
-            className="checkbox second"
-            checked={checked}
-            onClick={(e: any) => {
-              setChecked(!checked);
-              console.log(e.target.checked);
-            }}
-          />
-        </label>
-        <p
-          className="text"
-          style={
-            checked
-              ? { textDecorationLine: "line-through", color: "#D1D2DA" }
-              : {}
-          }
-        >
-          {task.taskName}
-        </p>
+    <div className="task">
+      <div className="task-main">
+        <div className="check-text">
+          <label className="label">
+            <input
+              type="checkbox"
+              className="checkbox second"
+              checked={checked}
+              onClick={() => {
+                setChecked(!checked);
+                task.checked = !task.checked;
+                console.log(task.checked);
+                console.log("sad");
+              }}
+            />
+          </label>
+          <p
+            className="text"
+            style={
+              checked
+                ? { textDecorationLine: "line-through", color: "#D1D2DA" }
+                : {}
+            }
+          >
+            {task.taskName}
+          </p>
+        </div>
+        <img
+          src="./assets/icon-cross.svg"
+          alt="cross"
+          className="delete"
+          onClick={() => deleteTodo(index)}
+        />
       </div>
-      <img
-        src="./assets/icon-cross.svg"
-        alt="cross"
-        className="delete"
-        onClick={() => deleteTodo(index)}
-      />
     </div>
   );
 };
