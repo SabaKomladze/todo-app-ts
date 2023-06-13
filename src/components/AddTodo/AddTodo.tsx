@@ -24,9 +24,9 @@ const AddTodo = ({ index, task, todos, setTodos }: Props) => {
             <input
               type="checkbox"
               className="checkbox second"
-              checked={checked}
+              checked={task.checked}
               onClick={() => {
-                setChecked(!checked);
+                setChecked(!task.checked);
                 task.checked = !task.checked;
                 console.log(task.checked);
                 console.log("sad");
@@ -36,7 +36,7 @@ const AddTodo = ({ index, task, todos, setTodos }: Props) => {
           <p
             className="text"
             style={
-              checked
+              task.checked
                 ? { textDecorationLine: "line-through", color: "#D1D2DA" }
                 : {}
             }

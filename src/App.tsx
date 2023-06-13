@@ -9,11 +9,9 @@ const App: FC = () => {
   const [todos, setTodos] = useState<ITask[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
-  const filteredTodos = active
-    ? todos.filter((task: ITask) => task.checked === false)
-    : todos;
-  console.log(filteredTodos);
-
+  const [completed, setCompleted] = useState<boolean>(false);
+  const activeTodos = todos.filter((task: ITask) => task.checked === false);
+  const CompletedTodos = todos.filter((task: ITask) => task.checked === true);
   return (
     <div className="app">
       <div className="header-input">
@@ -27,21 +25,27 @@ const App: FC = () => {
         />
       </div>
       <div className="list">
-        {filteredTodos.map((task: ITask, index: number) => (
-          <AddTodo
-            key={index}
-            task={task}
-            todos={todos}
-            setTodos={setTodos}
-            index={index}
-          />
-        ))}
+        {(active ? activeTodos : completed ? CompletedTodos : todos).map(
+          (task, index) => (
+            <AddTodo
+              key={index}
+              task={task}
+              todos={todos}
+              setTodos={setTodos}
+              index={index}
+            />
+          )
+        )}
         {todos.length > 0 && (
           <Filter
             todos={todos}
             setTodos={setTodos}
             active={active}
             setActive={setActive}
+            activeTodos={activeTodos}
+            CompletedTodos={CompletedTodos}
+            completed={completed}
+            setCompleted={setCompleted}
           />
         )}
       </div>
