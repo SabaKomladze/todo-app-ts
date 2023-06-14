@@ -5,9 +5,10 @@ function Filter({
   activeTodos,
   active,
   setActive,
-  CompletedTodos,
+
   setCompleted,
-  completed,
+
+  setTodos,
 }: {
   todos: ITask[];
   setTodos: React.Dispatch<React.SetStateAction<ITask[]>>;
@@ -17,7 +18,12 @@ function Filter({
   CompletedTodos: ITask[];
   setCompleted: React.Dispatch<React.SetStateAction<boolean>>;
   completed: boolean;
+  deleteTodo: any;
 }) {
+  const clearCompleted = () => {
+    const updatedTodos = todos.filter((task) => task.checked === false);
+    setTodos(updatedTodos);
+  };
   return (
     <div className="filters">
       <p className="length">
@@ -52,7 +58,14 @@ function Filter({
           Completed
         </p>
       </div>
-      <p className="clear">Clear Completed</p>
+      <p
+        className="clear"
+        onClick={() => {
+          clearCompleted();
+        }}
+      >
+        Clear Completed
+      </p>
     </div>
   );
 }

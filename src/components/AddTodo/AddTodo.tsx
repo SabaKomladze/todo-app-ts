@@ -7,15 +7,11 @@ interface Props {
   todos: ITask[];
   setTodos: React.Dispatch<React.SetStateAction<ITask[]>>;
   index: number;
+  deleteTodo: any;
 }
-const AddTodo = ({ index, task, todos, setTodos }: Props) => {
+const AddTodo = ({ index, task, todos, setTodos, deleteTodo }: Props) => {
   const [checked, setChecked] = useState<boolean>(task.checked);
 
-  const deleteTodo = (index: number) => {
-    let reduce = [...todos];
-    reduce.splice(index, 1);
-    setTodos(reduce);
-  };
   return (
     <div className="task">
       <div className="task-main">

@@ -12,6 +12,11 @@ const App: FC = () => {
   const [completed, setCompleted] = useState<boolean>(false);
   const activeTodos = todos.filter((task: ITask) => task.checked === false);
   const CompletedTodos = todos.filter((task: ITask) => task.checked === true);
+  const deleteTodo = (index: number) => {
+    let reduce = [...todos];
+    reduce.splice(index, 1);
+    setTodos(reduce);
+  };
   return (
     <div className="app">
       <div className="header-input">
@@ -33,6 +38,7 @@ const App: FC = () => {
               todos={todos}
               setTodos={setTodos}
               index={index}
+              deleteTodo={deleteTodo}
             />
           )
         )}
@@ -46,6 +52,7 @@ const App: FC = () => {
             CompletedTodos={CompletedTodos}
             completed={completed}
             setCompleted={setCompleted}
+            deleteTodo={deleteTodo}
           />
         )}
       </div>
