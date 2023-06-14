@@ -5,10 +5,10 @@ function Filter({
   activeTodos,
   active,
   setActive,
-
   setCompleted,
-
   setTodos,
+  completed,
+  CompletedTodos,
 }: {
   todos: ITask[];
   setTodos: React.Dispatch<React.SetStateAction<ITask[]>>;
@@ -27,7 +27,12 @@ function Filter({
   return (
     <div className="filters">
       <p className="length">
-        {active ? activeTodos.length : todos.length} items left
+        {active
+          ? activeTodos.length
+          : completed
+          ? CompletedTodos.length
+          : todos.length}{" "}
+        items left
       </p>
       <div className="filter-list">
         <p

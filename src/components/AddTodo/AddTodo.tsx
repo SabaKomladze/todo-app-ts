@@ -24,8 +24,6 @@ const AddTodo = ({ index, task, todos, setTodos, deleteTodo }: Props) => {
               onClick={() => {
                 setChecked(!task.checked);
                 task.checked = !task.checked;
-                console.log(task.checked);
-                console.log("sad");
               }}
             />
           </label>

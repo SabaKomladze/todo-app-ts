@@ -4,6 +4,8 @@ import { ITask } from "./components/Interface";
 import Input from "./components/Input/Input";
 import AddTodo from "./components/AddTodo/AddTodo";
 import Filter from "./Filter/Filter";
+import { DragDropContext } from "react-beautiful-dnd";
+
 const App: FC = () => {
   const [input, setInput] = useState<string>("");
   const [todos, setTodos] = useState<ITask[]>([]);

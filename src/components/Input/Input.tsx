@@ -27,12 +27,14 @@ function Input(props: {
     <div className="input-main">
       <header className="header">
         <h1 className="todo">TODO</h1>
-        <img src="./assets/icon-moon.svg" alt="moon" className="moon" />
       </header>
       <form
         className="input-div"
         onSubmit={(e) => {
-          addTask(e);
+          e.preventDefault();
+          {
+            props.input !== "" ? addTask(e) : null;
+          }
         }}
       >
         <input
@@ -48,7 +50,6 @@ function Input(props: {
             className="checkbox"
             onClick={(e: any) => {
               props.setChecked(e.target.checked);
-              console.log(props.checked);
             }}
           />
         </label>
